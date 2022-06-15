@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+  <record id="hr_timesheet_line_tree_inherit_incentive" model="ir.ui.view">
+    <field name="name">hr.timesheet.line.tree.inherit.incentive</field>
+    <field name="model">account.analytic.line</field>
+    <field name="inherit_id" ref="hr_timesheet.hr_timesheet_line_tree"/>
+    <field name="arch" type="xml">
+		<xpath expr="//field[@name='date']" position="after">
+			<field name="start_time" widget="float_time"/>
+			<field name="end_time" widget="float_time"/>
+		</xpath>
+    </field>
+  </record>
+
+</odoo>

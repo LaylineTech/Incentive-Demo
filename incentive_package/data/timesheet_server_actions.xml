@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="account_analytic_line_action_server" model="ir.actions.server">
+        <field name="name">Transfer Data</field>
+        <field name="model_id" ref="analytic.model_account_analytic_line"/>
+        <field name="binding_model_id" ref="analytic.model_account_analytic_line"/>
+        <field name="state">code</field>
+        <field name="code">
+            for rec in records:
+                if rec.x_studio_start_time_1:
+                    rec['start_time'] = rec.conv_time_float(x_studio_start_time_1)
+                if rec.x_studio_end_time_1:
+                    rec['end_time'] = rec.conv_time_float(x_studio_end_time_1)
+        </field>
+    </record>
+
+</odoo>
